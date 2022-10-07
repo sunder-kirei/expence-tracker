@@ -108,6 +108,14 @@ body .root {
   border-radius: 0.25em;
   cursor: pointer;
 }
+.inputCard .main .amount .btn .credit-active {
+  background-color: rgb(58, 255, 58);
+  border: none;
+}
+.inputCard .main .amount .btn .debit-active {
+  border: none;
+  background-color: red;
+}
 .inputCard .main .description {
   display: grid;
   grid-template-columns: 3fr 2fr;

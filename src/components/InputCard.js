@@ -1,5 +1,4 @@
 import { React, useState } from "react";
-
 import "./styles/InputCard.css";
 
 function InputCard(props) {
@@ -16,11 +15,17 @@ function InputCard(props) {
   }
 
   function reset() {
-
+    setLocalState({
+      title: '',
+      amount: '',
+      description: '',
+      date: '',
+    })
   }
 
   function onChange(e) {
-    console.log(e.target.value)
+    setLocalState({ ...localState, [e.target.id]: e.target.value })
+    console.log(localState);
   }
 
   return (
@@ -44,20 +49,22 @@ function InputCard(props) {
             id="title"
             placeholder="Add Title"
             onChange={onChange}
+            value={localState['title']}
           />
-          <input type="date" id="date" onChange={onChange} />
+          <input type="date" id="date" onChange={onChange} value={localState['date']} />
         </div>
         <div className="main">
           <div className="amount">
             <input
-              type="text"
+              type="number"
               placeholder="Amount"
               id="amount"
               onChange={onChange}
+              value={localState['amount']}
             />
             <div className="btn">
-              <div id="credit-btn">Credit</div>
-              <div id="debit-btn">Debit</div>
+              <div id="credit-btn" className={Number(localState['amount']) >= 0 ? `credit-active` : ``}>Credit</div>
+              <div id="debit-btn" className={Number(localState['amount']) < 0 ? `debit-active` : ``}>Debit</div>
             </div>
           </div>
           <div className="description">
@@ -66,16 +73,18 @@ function InputCard(props) {
               id="description"
               placeholder="Description(optional)"
               onChange={onChange}
+              value={localState['description']}
             ></textarea>
             <div className="selection">
-              <div className="category">Category</div>
+              {/* <div className="category">Category</div>
               <ul id="category">
                 <li>Grocery</li>
                 <li>Recharge and Bill Payment</li>
                 <li>Food</li>
                 <li>Amazon</li>
                 <li>Misc</li>
-              </ul>
+              </ul> */}
+
               <div className="type">Type</div>
               <ul id="type">
                 <li>Grocery</li>

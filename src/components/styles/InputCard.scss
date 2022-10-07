@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .inputCard {
   display: flex;
   flex-direction: column;
@@ -17,12 +18,14 @@
   width: 40em;
   border-radius: 0.5rem;
   padding: 1.5em;
-  padding-top: 2.5em; 
+  padding-top: 2.5em;
   color: $color-font-primary;
   background-color: $color-bg-navbar;
+
   ::placeholder {
     color: $color-font-primary;
   }
+
   input,
   textarea {
     padding-block: 0.5rem;
@@ -32,31 +35,37 @@
     color-scheme: dark;
     border-radius: 0.5rem;
   }
+
   .heading {
     position: relative;
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-gap: 1rem;
     margin-bottom: 1em;
+
     .close {
       position: absolute;
       top: -2em;
       right: 0;
       cursor: pointer;
+
       &:hover {
         svg {
           fill: $color-red;
         }
       }
     }
+
     input {
       font-size: 1.5em;
       border-radius: 0.25em;
     }
+
     input[type="date"] {
       cursor: pointer;
     }
   }
+
   .main {
     .amount {
       display: grid;
@@ -64,14 +73,17 @@
       grid-gap: 1rem;
       font-size: 1.5em;
       margin-bottom: 0.5em;
+
       input {
         border-radius: 0.25em;
         font-size: 1em;
       }
+
       .btn {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 0.5em;
+
         div {
           border: 1px solid $color-grey;
           display: flex;
@@ -80,18 +92,32 @@
           border-radius: 0.25em;
           cursor: pointer;
         }
+
+        .credit-active {
+          background-color: $color-green;
+          border: none;
+        }
+
+        .debit-active {
+          border: none;
+          background-color: $color-red;
+        }
       }
     }
+
     .description {
       display: grid;
       grid-template-columns: 3fr 2fr;
       grid-gap: 1em;
+
       textarea {
         height: 100%;
         font-size: 1rem;
       }
+
       .selection {
         position: relative;
+
         .category,
         .type,
         .bank {
@@ -104,9 +130,11 @@
           z-index: 0;
           cursor: pointer;
         }
+
         .bank {
           margin-bottom: 2em;
         }
+
         ul {
           display: none;
           cursor: pointer;
@@ -120,24 +148,29 @@
           z-index: 100;
           width: 100%;
           background-color: $color-bg-navbar;
+
           &#type {
             top: 5.5em;
           }
+
           &#bank {
             top: 8.5em;
           }
         }
+
         .ul-shown {
           display: inherit !important;
         }
       }
     }
   }
-  > .btn {
+
+  >.btn {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
     margin-top: 1rem;
+
     button {
       color: $color-font-primary;
       height: 3rem;
@@ -147,20 +180,25 @@
       border: none;
       transition: font-size ease-in 0.15s;
       cursor: pointer;
+
       &:hover {
         font-size: 1.75rem;
         color: white;
       }
     }
+
     #submit {
       background-color: $color-primary;
-      &:hover{
+
+      &:hover {
         background-color: rgb(96, 96, 255);
       }
     }
+
     #reset {
       background-color: $color-red;
-      &:hover{
+
+      &:hover {
         background-color: rgb(255, 67, 67);
         color: white;
       }
