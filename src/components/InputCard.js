@@ -8,7 +8,7 @@ function InputCard(props) {
   }
 
   function onChange(e) {
-    console.log(e.target.id);
+    console.log(e.target.id);git
   }
 
   return (
