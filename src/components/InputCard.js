@@ -1,14 +1,26 @@
-import React from "react";
+import { React, useState } from "react";
 
 import "./styles/InputCard.css";
 
 function InputCard(props) {
+
+  const [localState, setLocalState] = useState({
+    title: '',
+    amount: '',
+    description: '',
+    date: '',
+  });
+
   function closeCard(e) {
     if (e.target.className == "input-wrapper") props.onClick();
   }
 
+  function reset() {
+
+  }
+
   function onChange(e) {
-    console.log(e.target.id);
+    console.log(e.target.value)
   }
 
   return (
@@ -85,8 +97,8 @@ function InputCard(props) {
           </div>
         </div>
         <div className="btn">
-          <button id="submit">Submit</button>
-          <button id="reset">Reset</button>
+          <button id="submit" onClick={props.onSubmit}>Submit</button>
+          <button id="reset" onClick={reset}>Reset</button>
         </div>
       </div>
     </div>

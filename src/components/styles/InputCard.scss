@@ -13,12 +13,11 @@
 .inputCard {
   display: flex;
   flex-direction: column;
-  // height: 21.5em;
   height: fit-content;
   width: 40em;
   border-radius: 0.5rem;
-  padding: 1em;
-  padding-top: 2.5em;
+  padding: 1.5em;
+  padding-top: 2.5em; 
   color: $color-font-primary;
   background-color: $color-bg-navbar;
   ::placeholder {
@@ -150,13 +149,21 @@
       cursor: pointer;
       &:hover {
         font-size: 1.75rem;
+        color: white;
       }
     }
     #submit {
       background-color: $color-primary;
+      &:hover{
+        background-color: rgb(96, 96, 255);
+      }
     }
     #reset {
       background-color: $color-red;
+      &:hover{
+        background-color: rgb(255, 67, 67);
+        color: white;
+      }
     }
   }
 }

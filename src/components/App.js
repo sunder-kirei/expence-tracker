@@ -11,6 +11,8 @@ function App(props) {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [addTsx, setAddTsx] = useState(false);
 
+  const [data, setData] = useState([]);
+
   function handleCollapse() {
     setIsCollapsed(!isCollapsed);
   }
@@ -21,7 +23,7 @@ function App(props) {
         <Header onClick={handleCollapse} />
         <Navbar isCollapsed={isCollapsed} />
         <Home isCollapsed={isCollapsed} />
-        {/* <Transactions /> */}
+        <Transactions />
         <div className="add-transaction" onClick={() => setAddTsx(!addTsx)}>
           <img src="assets/images/add.svg" alt="add transaction" />
         </div>
