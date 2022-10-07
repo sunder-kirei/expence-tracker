@@ -1,0 +1,93 @@
+@import "./colors.scss";
+
+.home-page {
+  position: absolute;
+  top: 0px;
+  min-height: 100%;
+  height: fit-content;
+  width: 100%;
+  z-index: 0;
+  padding-left: 19em;
+  background-color: $color-bg-navbar;
+  padding-top: 5em;
+  transition: padding ease-in 0.2s;
+  color: $color-font-primary;
+  padding-right: 1em;
+  border: 1px solid white;
+  > span {
+    font-size: 2em;
+    font-weight: 500;
+  }
+  .at-a-glance {
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+  }
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    grid-gap: 1em;
+    height: fit-content;
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid $color-grey-border;
+    div {
+      cursor: pointer;
+      height: 6em;
+      border-radius: 0.5em;
+      border: 2px solid $color-grey-border;
+      padding-block: 1em;
+      padding-inline: 2em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: $color-grey;
+      &:hover {
+        border-color: $color-primary;
+      }
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        color: white;
+        img {
+          width: 1rem;
+          height: 1rem;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  section {
+    padding-top: 1em;
+    display: flex;
+    .left {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+      grid-gap: 1em;
+      flex-basis: 50%;
+    }
+    .right {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      flex-basis: 50%;
+    }
+  }
+}
+
+.nav-collapsed {
+  padding-left: 6.5em;
+}
+
+@media screen and (max-width: 930px) {
+  section {
+    display: block !important;
+
+    .right {
+      margin-top: 2em;
+    }
+  }
+}

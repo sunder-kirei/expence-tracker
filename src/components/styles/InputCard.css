@@ -1,0 +1,185 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Rubik", sans-serif;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  z-index: 0;
+}
+body .root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.input-wrapper {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(160, 158, 158, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputCard {
+  display: flex;
+  flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 40em;
+  border-radius: 0.5rem;
+  padding: 1em;
+  padding-top: 2.5em;
+  color: white;
+  background-color: rgb(31, 31, 31);
+}
+.inputCard ::-moz-placeholder {
+  color: white;
+}
+.inputCard :-ms-input-placeholder {
+  color: white;
+}
+.inputCard ::placeholder {
+  color: white;
+}
+.inputCard input,
+.inputCard textarea {
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  outline: none;
+  border: 1px solid rgb(160, 158, 158);
+  color-scheme: dark;
+  border-radius: 0.5rem;
+}
+.inputCard .heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 1rem;
+  margin-bottom: 1em;
+}
+.inputCard .heading .close {
+  position: absolute;
+  top: -2em;
+  right: 0;
+  cursor: pointer;
+}
+.inputCard .heading .close:hover svg {
+  fill: red;
+}
+.inputCard .heading input {
+  font-size: 1.5em;
+  border-radius: 0.25em;
+}
+.inputCard .heading input[type=date] {
+  cursor: pointer;
+}
+.inputCard .main .amount {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 1rem;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+.inputCard .main .amount input {
+  border-radius: 0.25em;
+  font-size: 1em;
+}
+.inputCard .main .amount .btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5em;
+}
+.inputCard .main .amount .btn div {
+  border: 1px solid rgb(160, 158, 158);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+.inputCard .main .description {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-gap: 1em;
+}
+.inputCard .main .description textarea {
+  height: 100%;
+  font-size: 1rem;
+}
+.inputCard .main .description .selection {
+  position: relative;
+}
+.inputCard .main .description .selection .category,
+.inputCard .main .description .selection .type,
+.inputCard .main .description .selection .bank {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgb(160, 158, 158);
+  border-radius: 0.25em;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+.inputCard .main .description .selection .bank {
+  margin-bottom: 2em;
+}
+.inputCard .main .description .selection ul {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  padding-inline: 1rem;
+  padding-block: 0.25em;
+  border: 1px solid rgb(160, 158, 158);
+  border-radius: 0.25rem;
+  z-index: 100;
+  width: 100%;
+  background-color: rgb(31, 31, 31);
+}
+.inputCard .main .description .selection ul#type {
+  top: 5.5em;
+}
+.inputCard .main .description .selection ul#bank {
+  top: 8.5em;
+}
+.inputCard .main .description .selection .ul-shown {
+  display: inherit !important;
+}
+.inputCard > .btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+.inputCard > .btn button {
+  color: white;
+  height: 3rem;
+  background-color: transparent;
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  border: none;
+  transition: font-size ease-in 0.15s;
+  cursor: pointer;
+}
+.inputCard > .btn button:hover {
+  font-size: 1.75rem;
+}
+.inputCard > .btn #submit {
+  background-color: #4859ff;
+}
+.inputCard > .btn #reset {
+  background-color: red;
+}/*# sourceMappingURL=InputCard.css.map */

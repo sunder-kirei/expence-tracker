@@ -1,0 +1,57 @@
+@import "./colors.scss";
+
+.month-card {
+  cursor: pointer;
+  min-width: 8em;
+  width: fit-content;
+  height: fit-content;
+  background-color: $color-bg-navbar;
+  color: white;
+  border-radius: 0.5em;
+  border: 2px solid $color-grey-border;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover {
+    border-color: $color-primary;
+  }
+  > span {
+    font-size: 1.5em;
+  }
+  .details {
+    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    div {
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.2em;
+      width: 100%;
+      justify-content: space-between;
+      > span {
+        margin-right: 1em;
+      }
+      span {
+        display: flex;
+        align-items: center;
+        svg {
+          width: 1em;
+        }
+      }
+    }
+    .deposit {
+      svg {
+        fill: $color-green;
+      }
+      color: $color-green;
+    }
+    .transfer {
+      svg {
+        fill: $color-red;
+      }
+      color: $color-red;
+    }
+  }
+}

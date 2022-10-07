@@ -1,0 +1,42 @@
+@import "./colors.scss";
+
+.summary {
+  border: 2px solid $color-grey-border;
+  border-radius: 0.5em;
+  padding: 1em;
+  &:hover {
+    border-color: $color-primary;
+  }
+  .name {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    .balance {
+      margin-bottom: 0.5em;
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 6em;
+        border: 2px solid $color-grey-border;
+        border-radius: 0.5em;
+        margin-right: 1em;
+        padding-block: 0.5em;
+        cursor: pointer;
+      }
+      :nth-child(3) {
+        margin-right: 0;
+      }
+      .credit {
+        border-color: $color-green;
+      }
+      .debit {
+        border-color: $color-red;
+      }
+    }
+  }
+}
