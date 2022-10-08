@@ -158,6 +158,10 @@
           }
         }
 
+        .selection-show {
+          display: block !important;
+        }
+
         .ul-shown {
           display: inherit !important;
         }
@@ -165,7 +169,7 @@
     }
   }
 
-  >.btn {
+  > .btn {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;

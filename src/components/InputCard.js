@@ -1,13 +1,13 @@
+import { type } from "@testing-library/user-event/dist/type";
 import { React, useState } from "react";
 import "./styles/InputCard.css";
 
 function InputCard(props) {
-
   const [localState, setLocalState] = useState({
-    title: '',
-    amount: '',
-    description: '',
-    date: '',
+    title: "",
+    amount: "",
+    description: "",
+    date: "",
   });
 
   function closeCard(e) {
@@ -16,16 +16,29 @@ function InputCard(props) {
 
   function reset() {
     setLocalState({
-      title: '',
-      amount: '',
-      description: '',
-      date: '',
-    })
+      title: "",
+      amount: "",
+      description: "",
+      date: "",
+    });
   }
 
   function onChange(e) {
-    setLocalState({ ...localState, [e.target.id]: e.target.value })
+    setLocalState({ ...localState, [e.target.id]: e.target.value });
     console.log(localState);
+  }
+
+  function findClosest(e) {
+    console.clear();
+    Array.from(e.target.closest(".selection").children).forEach((item) => {
+      if (item.id != e.target.className)
+        item?.classList.remove("selection-show");
+    });
+
+    e.target
+      .closest(".selection")
+      .children.namedItem(e.target.className)
+      .classList.toggle("selection-show");
   }
 
   return (
@@ -49,9 +62,14 @@ function InputCard(props) {
             id="title"
             placeholder="Add Title"
             onChange={onChange}
-            value={localState['title']}
+            value={localState["title"]}
           />
-          <input type="date" id="date" onChange={onChange} value={localState['date']} />
+          <input
+            type="date"
+            id="date"
+            onChange={onChange}
+            value={localState["date"]}
+          />
         </div>
         <div className="main">
           <div className="amount">
@@ -60,11 +78,25 @@ function InputCard(props) {
               placeholder="Amount"
               id="amount"
               onChange={onChange}
-              value={localState['amount']}
+              value={localState["amount"]}
             />
             <div className="btn">
-              <div id="credit-btn" className={Number(localState['amount']) >= 0 ? `credit-active` : ``}>Credit</div>
-              <div id="debit-btn" className={Number(localState['amount']) < 0 ? `debit-active` : ``}>Debit</div>
+              <div
+                id="credit-btn"
+                className={
+                  Number(localState["amount"]) >= 0 ? `credit-active` : ``
+                }
+              >
+                Credit
+              </div>
+              <div
+                id="debit-btn"
+                className={
+                  Number(localState["amount"]) < 0 ? `debit-active` : ``
+                }
+              >
+                Debit
+              </div>
             </div>
           </div>
           <div className="description">
@@ -73,19 +105,23 @@ function InputCard(props) {
               id="description"
               placeholder="Description(optional)"
               onChange={onChange}
-              value={localState['description']}
+              value={localState["description"]}
             ></textarea>
             <div className="selection">
-              {/* <div className="category">Category</div>
+              <div className="category" onClick={findClosest}>
+                Category
+              </div>
               <ul id="category">
                 <li>Grocery</li>
                 <li>Recharge and Bill Payment</li>
                 <li>Food</li>
                 <li>Amazon</li>
                 <li>Misc</li>
-              </ul> */}
+              </ul>
 
-              <div className="type">Type</div>
+              <div className="type" onClick={findClosest}>
+                Type
+              </div>
               <ul id="type">
                 <li>Grocery</li>
                 <li>Recharge and Bill Payment</li>
@@ -94,7 +130,9 @@ function InputCard(props) {
                 <li>Misc</li>
               </ul>
 
-              <div className="bank">Bank Account</div>
+              <div className="bank" onClick={findClosest}>
+                Bank Account
+              </div>
               <ul id="bank">
                 <li>Grocery</li>
                 <li>Recharge and Bill Payment</li>
@@ -106,8 +144,12 @@ function InputCard(props) {
           </div>
         </div>
         <div className="btn">
-          <button id="submit" onClick={props.onSubmit}>Submit</button>
-          <button id="reset" onClick={reset}>Reset</button>
+          <button id="submit" onClick={props.onSubmit}>
+            Submit
+          </button>
+          <button id="reset" onClick={reset}>
+            Reset
+          </button>
         </div>
       </div>
     </div>

@@ -163,6 +163,9 @@ body .root {
 .inputCard .main .description .selection ul#bank {
   top: 8.5em;
 }
+.inputCard .main .description .selection .selection-show {
+  display: block !important;
+}
 .inputCard .main .description .selection .ul-shown {
   display: inherit !important;
 }
