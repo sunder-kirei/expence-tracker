@@ -118,6 +118,12 @@
       .selection {
         position: relative;
 
+        > div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
         .category,
         .type,
         .bank {
@@ -148,6 +154,7 @@
           z-index: 100;
           width: 100%;
           background-color: $color-bg-navbar;
+          transition: all ease-in 0.2s;
 
           &#type {
             top: 5.5em;
@@ -160,10 +167,6 @@
 
         .selection-show {
           display: block !important;
-        }
-
-        .ul-shown {
-          display: inherit !important;
         }
       }
     }

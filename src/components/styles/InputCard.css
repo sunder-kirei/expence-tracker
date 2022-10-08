@@ -128,6 +128,11 @@ body .root {
 .inputCard .main .description .selection {
   position: relative;
 }
+.inputCard .main .description .selection > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .inputCard .main .description .selection .category,
 .inputCard .main .description .selection .type,
 .inputCard .main .description .selection .bank {
@@ -156,6 +161,7 @@ body .root {
   z-index: 100;
   width: 100%;
   background-color: rgb(31, 31, 31);
+  transition: all ease-in 0.2s;
 }
 .inputCard .main .description .selection ul#type {
   top: 5.5em;
@@ -165,9 +171,6 @@ body .root {
 }
 .inputCard .main .description .selection .selection-show {
   display: block !important;
-}
-.inputCard .main .description .selection .ul-shown {
-  display: inherit !important;
 }
 .inputCard > .btn {
   display: grid;

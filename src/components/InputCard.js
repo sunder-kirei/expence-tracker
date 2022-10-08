@@ -25,20 +25,16 @@ function InputCard(props) {
 
   function onChange(e) {
     setLocalState({ ...localState, [e.target.id]: e.target.value });
-    console.log(localState);
   }
 
-  function findClosest(e) {
-    console.clear();
+  function dropdown(e) {
     Array.from(e.target.closest(".selection").children).forEach((item) => {
-      if (item.id != e.target.className)
-        item?.classList.remove("selection-show");
+      if (item.id === e.target.closest("div").className) {
+        item.classList?.toggle("selection-show");
+      } else if (item.localName === "ul") {
+        item.classList?.remove("selection-show");
+      }
     });
-
-    e.target
-      .closest(".selection")
-      .children.namedItem(e.target.className)
-      .classList.toggle("selection-show");
   }
 
   return (
@@ -108,8 +104,9 @@ function InputCard(props) {
               value={localState["description"]}
             ></textarea>
             <div className="selection">
-              <div className="category" onClick={findClosest}>
-                Category
+              <div className="category" onClick={dropdown}>
+                <span>Category</span>
+                <img src="assets/images/dropdown.svg" alt="dropdown" />
               </div>
               <ul id="category">
                 <li>Grocery</li>
@@ -119,8 +116,9 @@ function InputCard(props) {
                 <li>Misc</li>
               </ul>
 
-              <div className="type" onClick={findClosest}>
-                Type
+              <div className="type" onClick={dropdown}>
+                <span>Type</span>
+                <img src="assets/images/dropdown.svg" alt="dropdown" />
               </div>
               <ul id="type">
                 <li>Grocery</li>
@@ -130,8 +128,9 @@ function InputCard(props) {
                 <li>Misc</li>
               </ul>
 
-              <div className="bank" onClick={findClosest}>
-                Bank Account
+              <div className="bank" onClick={dropdown}>
+                <span>Bank Account</span>
+                <img src="assets/images/dropdown.svg" alt="dropdown" />
               </div>
               <ul id="bank">
                 <li>Grocery</li>
@@ -144,7 +143,7 @@ function InputCard(props) {
           </div>
         </div>
         <div className="btn">
-          <button id="submit" onClick={props.onSubmit}>
+          <button id="submit" onClick={() => props.onSubmit(localState)}>
             Submit
           </button>
           <button id="reset" onClick={reset}>
